@@ -6,7 +6,7 @@
 /*   By: avancoll <avancoll@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 11:08:59 by avancoll          #+#    #+#             */
-/*   Updated: 2022/10/14 11:05:15 by avancoll         ###   ########.fr       */
+/*   Updated: 2022/10/14 11:59:05 by avancoll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,11 @@ int	ft_putnbr(int n, int res)
 			n = -n;
 		}
 		if (n >= 10)
-		{
 			res = ft_putnbr(n / 10, res);
-			n = n % 10;
-		}
+		n %= 10;
 		if (n < 10)
 		{
-			n = n + '0';
+			n += '0';
 			write(1, &n, 1);
 			res++;
 		}
@@ -37,7 +35,7 @@ int	ft_putnbr(int n, int res)
 	else
 	{
 		write(1, "-2147483648", 11);
-		res = res + 11;
+		res += 11;
 	}
 	return (res);
 }
