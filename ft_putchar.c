@@ -6,13 +6,15 @@
 /*   By: avancoll <avancoll@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 11:06:50 by avancoll          #+#    #+#             */
-/*   Updated: 2022/10/12 11:15:24 by avancoll         ###   ########.fr       */
+/*   Updated: 2022/10/13 13:23:09 by avancoll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
-void	ft_putchar(char c)
+int	ft_putchar(char c, int res)
 {
 	write(1, &c, 1);
+	res++;
+	return (res);
 }

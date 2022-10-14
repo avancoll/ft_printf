@@ -6,40 +6,28 @@
 /*   By: avancoll <avancoll@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 10:46:18 by avancoll          #+#    #+#             */
-/*   Updated: 2022/10/12 17:46:47 by avancoll         ###   ########.fr       */
+/*   Updated: 2022/10/14 11:31:38 by avancoll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_printf(const char *str, ...)
 {
 	va_list			ap;
+	unsigned int	res;
 	unsigned int	i;
 
 	va_start(ap, str);
+	res = 0;
 	i = 0;
 	while (str[i])
 	{
-		while (str[i] != '%')
-		{
-			ft_putchar(str[i]);
-			i++;
-		}
-		if (str[i] == '%')
-		{
-			i++;
-			ft_check_conversion(ap, str[i]);
-		}
-		i++;
+		while (str[i] != '%' && str[i])
+			res = ft_putchar(str[i++], res);
+		if (str[i] == '%' && str[++i])
+			res = ft_check_conversion(ap, str[i++], res);
 	}
 	va_end(ap);
-	return (0);
-}
-
-#include <stdio.h>
-int	main(void)
-{
-	int	a = 5;
-	ft_printf("%d", a);
+	return (res);
 }

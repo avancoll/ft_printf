@@ -6,7 +6,7 @@
 #    By: avancoll <avancoll@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/04 18:22:00 by avancoll          #+#    #+#              #
-#    Updated: 2022/10/12 17:35:51 by avancoll         ###   ########.fr        #
+#    Updated: 2022/10/13 12:12:44 by avancoll         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ SRCS =	ft_printf.c\
 		ft_putptr.c\
 		ft_putnbr_hexalowercase.c\
 		ft_putnbr_hexauppercase.c\
+		ft_check_conversion.c
 
 OBJS		= $(SRCS:.c=.o)
 
